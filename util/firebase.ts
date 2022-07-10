@@ -4,13 +4,13 @@ import "firebase/compat/firestore";
 import "firebase/compat/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBHEdynOf5tgr7BJN97Km6TIz3icCShqT0",
-  authDomain: "blog-13966.firebaseapp.com",
-  projectId: "blog-13966",
-  storageBucket: "blog-13966.appspot.com",
-  messagingSenderId: "988633790781",
-  appId: "1:988633790781:web:9af81b98f7ea845b20ed54",
-  measurementId: "G-09GQVN673C",
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
 };
 
 if (!firebase.apps.length) {
