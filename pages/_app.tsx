@@ -4,11 +4,13 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div className="h-full">
       <Navbar />
-      <Component {...pageProps} />
-      <Toaster />
-    </>
+      <div className="app-container">
+        <Component {...pageProps} />
+        <Toaster />
+      </div>
+    </div>
   );
 }
 
