@@ -1,3 +1,4 @@
+import { getAuth } from "firebase/auth";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
@@ -13,11 +14,11 @@ const firebaseConfig = {
   measurementId: process.env.MEASUREMENT_ID,
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+const app = firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+export const getFireAuth = getAuth(app);
 
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const firestore = firebase.firestore();
 export const storage = firebase.storage();
