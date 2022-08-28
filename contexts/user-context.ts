@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { User } from "../model/user.model";
+import { User } from "firebase/auth";
 
 interface UserContextProps {
   user: User | undefined;
