@@ -7,9 +7,14 @@ export enum ButtonType {
 interface ButtonProps {
   buttonType: ButtonType;
   text: string;
+  onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ buttonType, text }) => {
+export const Button: React.FC<ButtonProps> = ({
+  buttonType,
+  text,
+  onClick,
+}) => {
   const basicClasses = "px-4 py-2 rounded transition";
   const primaryClasses = "bg-blue-600 text-white hover:bg-blue-500";
   const secondaryClasses = "bg-gray-200 text-black hover:bg-gray-100";
@@ -29,5 +34,9 @@ export const Button: React.FC<ButtonProps> = ({ buttonType, text }) => {
     return classes;
   };
 
-  return <button className={getClasses()}>{text}</button>;
+  return (
+    <button className={getClasses()} onClick={onClick}>
+      {text}
+    </button>
+  );
 };
