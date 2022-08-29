@@ -1,8 +1,10 @@
 import { auth, googleAuthProvider } from "../util/firebase";
 import { Button, ButtonType } from "../components/button/Button";
+import { UserContext } from "../contexts/user-context";
+import { useContext } from "react";
 
 const Login = () => {
-  const user = false;
+  const { user, userName } = useContext(UserContext);
 
   const signInWithGoogle = async () => {
     try {
