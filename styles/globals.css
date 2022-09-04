@@ -23,5 +23,5 @@ a {
 }
 
 .app-container {
-  @apply container pt-16;
+  @apply container pt-16 mx-auto;
 }
