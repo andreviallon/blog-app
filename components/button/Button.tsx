@@ -7,12 +7,14 @@ export enum ButtonType {
 interface ButtonProps {
   buttonType: ButtonType;
   text: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   buttonType,
   text,
+  disabled,
   onClick,
 }) => {
   const basicClasses = "px-4 py-2 rounded transition";
@@ -35,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button className={getClasses()} onClick={onClick}>
+    <button className={getClasses()} onClick={onClick} disabled={disabled}>
       {text}
     </button>
   );
