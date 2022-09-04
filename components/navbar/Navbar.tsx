@@ -4,7 +4,7 @@ import { UserContext } from "../../contexts/user-context";
 import { Button, ButtonType } from "../button/Button";
 
 export const Navbar = () => {
-  const { user, userName } = useContext(UserContext);
+  const { user, username } = useContext(UserContext);
 
   return (
     <div className="fixed w-full h-16 p-4 flex justify-between items-center bg-gray-100">
@@ -12,14 +12,14 @@ export const Navbar = () => {
         <button className="text-lg font-semibold">Blog App</button>
       </Link>
       <div className="flex gap-2">
-        {userName ? (
+        {username ? (
           <>
             <Link href="/admin">
               <a>
                 <Button buttonType={ButtonType.PRIMARY} text="Write Post" />
               </a>
             </Link>
-            <Link href={`/${userName}`}>
+            <Link href={`/${username}`}>
               <a>
                 <Button buttonType={ButtonType.SECONDARY} text="User" />
               </a>

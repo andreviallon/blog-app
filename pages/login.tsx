@@ -4,7 +4,7 @@ import { UserContext } from "../contexts/user-context";
 import { useContext } from "react";
 
 const Login = () => {
-  const { user, userName } = useContext(UserContext);
+  const { user, username } = useContext(UserContext);
 
   const signInWithGoogle = async () => {
     try {

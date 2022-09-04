@@ -5,7 +5,7 @@ import { firestore, getFireAuth } from "../util/firebase";
 
 export const useUserData = () => {
   const [user] = useAuthState(getFireAuth);
-  const [userName, setUserName] = useState<string | null>(null);
+  const [username, setUserName] = useState<string | null>(null);
 
   useEffect(() => {
     let unsubscribe: any;
@@ -13,7 +13,7 @@ export const useUserData = () => {
     if (user) {
       const ref = firestore.collection(Collection.USERS).doc(user.uid);
       unsubscribe = ref.onSnapshot((doc) => {
-        setUserName(doc.data()?.userName);
+        setUserName(doc.data()?.username);
       });
     } else {
       setUserName(null);
@@ -22,5 +22,5 @@ export const useUserData = () => {
     return unsubscribe;
   }, [user]);
 
-  return { user, userName };
+  return { user, username };
 };

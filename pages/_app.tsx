@@ -6,10 +6,10 @@ import { useUserData } from "../hooks/user-data";
 
 function MyApp({ Component, pageProps }) {
   const userData = useUserData();
-  const { user, userName } = userData;
+  const { user, username } = userData;
 
   return (
-    <UserContext.Provider value={{ user, userName }}>
+    <UserContext.Provider value={{ user, username }}>
       <div className="h-full">
         <Navbar />
         <div className="app-container">
