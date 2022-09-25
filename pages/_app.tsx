@@ -1,4 +1,4 @@
-import { Navbar } from "../components/navbar/Navbar";
+import { Navbar } from "../components/Navbar";
 import { Toaster } from "react-hot-toast";
 import "../styles/globals.css";
 import { UserContext } from "../contexts/user-context";
