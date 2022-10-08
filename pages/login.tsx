@@ -1,5 +1,5 @@
 import { auth, googleAuthProvider } from "../util/firebase";
-import { Button, ButtonType } from "../components/button/Button";
+import { Button, ButtonType } from "../components/Button";
 import { UserContext } from "../contexts/user-context";
 import { useContext } from "react";
 
