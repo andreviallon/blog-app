@@ -2,6 +2,7 @@ import { auth, googleAuthProvider } from "../util/firebase";
 import { Button, ButtonType } from "../components/Button";
 import { UserContext } from "../contexts/user-context";
 import { useContext } from "react";
+import { UsernameForm } from "../components/UsernameForm";
 
 const Login = () => {
   const { user, username } = useContext(UserContext);
@@ -42,7 +43,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center mx-auto mt-8">
-      {user ? logoutButton() : loginButtons()}
+      {user ? !username ? <UsernameForm /> : logoutButton() : loginButtons()}
     </div>
   );
 };
